@@ -6,7 +6,7 @@ function Contact() {
     const initialValue = {name:"", email:'', subject:"", message:'',};
     const [formValues, setFormValues] = useState(initialValue);
     const [formErrors, setFormErrors] = useState({});
-    const [isSubmit, setisSubmit] = useState(false);
+    const [isSubmit, setisSubmit] = useState(false); 
   
     const handleChange = (e) => {
   
