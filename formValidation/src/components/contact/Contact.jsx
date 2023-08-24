@@ -26,7 +26,7 @@ function Contact() {
       if(Object.keys(formErrors).length === 0 && isSubmit) {
         console.log(formValues);
       }
-    }, [formErrors])
+    }, [formErrors]);
   
     const validate = (values) => {
       const errors = {}
@@ -56,7 +56,7 @@ function Contact() {
             
               <div className='group1'>
                 <div className='input'>
-                <input type='text' placeholder='Name' className='form-text' value={formValues.name} onChange={handleChange}></input>
+                <input type='text' placeholder='Name' className='form-text' value='' onChange={handleChange}></input>
                 </div>
               </div>
               <p>{formErrors.name}</p>
@@ -64,6 +64,7 @@ function Contact() {
               <div className='group1'>
                 <div className='input'>
                 <input type='text' placeholder='Email' className='form-text' value={formValues.email} onChange={handleChange}></input>
+                {/* <input type='text' placeholder='Email' className='form-text' value={formValues.email} onChange={handleChange}></input> */}
                 </div>
               </div>
             </div>
@@ -72,7 +73,7 @@ function Contact() {
             <div className='row'>
             <div className='group2'>
                 <div className='input'>
-                <input type='text' placeholder='Subject' className='form-text' value={formValues.subject} onChange={handleChange}></input>
+                <input type='text' placeholder='Subject' className='form-text' value={formValues} onChange={handleChange}></input>
                 </div>
               </div>
             </div>
