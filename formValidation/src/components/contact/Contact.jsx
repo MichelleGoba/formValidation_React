@@ -3,17 +3,28 @@ import React, { useState } from 'react';
 
 function Contact() {
     const initialValue = {name:"", email:'', subject:"", message:'',};
-    const [formValues, setFrmValues] = useState(initialValue);
+    const [formValues, setFormValues] = useState(initialValue);
+    const [formErrors, setFormErrors] = useState();
 
     const handleChange = (e) => {
 
         const {name, value} = e.target;
-        setFrmValues({...formValues, [name]:value});
+        setFormValues({...formValues, [name]:value});
         console.log(formValues);
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setFormErrors(validate(formValues));
+    };
+
+    const validate = (values) => {
+
+    }
+
   return (
     <div className='contact-container'> 
+    <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
     <form onSubmit={handleSubmit}>
         <div className='contact-form'>
           
