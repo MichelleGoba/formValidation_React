@@ -19,8 +19,22 @@ function Contact() {
     };
 
     const validate = (values) => {
-
-    }
+        const errors = {}
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+        if (!values.name) {
+            errors.name = "Name is required!";
+        }
+        if (!values.email) {
+            errors.email= "Email is required!";
+        }
+        if (!values.subject) {
+            errors.subject = "Subject is required!";
+        }
+        if (!values.message) {
+            errors.message = "Message is required!";
+        }
+        return errors;
+    };
 
   return (
     <div className='contact-container'> 
